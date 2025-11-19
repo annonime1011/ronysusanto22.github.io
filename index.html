@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rony Susanto — Website Pribadi</title>
+  <meta name="description" content="Website pribadi Rony Susanto — profil, portofolio, kontak.">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7c3aed; --glass: rgba(255,255,255,0.03);
+      --radius:12px; --maxw:1000px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,var(--bg),#071022); color:#eef2f7; -webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px)}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#041025}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    nav{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:8px 12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);cursor:pointer;font-weight:600}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+
+    .section{margin-bottom:18px}
+    h2{margin:0 0 10px;font-size:1.1rem}
+    ul.skills{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:0}
+    ul.skills li{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.9rem}
+
+    .projects{display:flex;flex-direction:column;gap:12px}
+    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02)}
+    .project h3{margin:0 0 6px;font-size:1rem}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    button.primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#041025;border:none;padding:10px;border-radius:10px;font-weight:700;cursor:pointer}
+
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.wrap{margin:18px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="avatar">RS</div>
+      <div>
+        <h1>Rony Susanto</h1>
+        <p class="lead">Teknologi | Network Engineer | Penulis teknis — saya membangun solusi jaringan dan otomasi untuk infrastruktur skala menengah sampai besar.</p>
+        <nav>
+          <button class="btn" onclick="scrollToSection('about')">Tentang</button>
+          <button class="btn" onclick="scrollToSection('work')">Portofolio</button>
+          <button class="btn" onclick="scrollToSection('contact')">Kontak</button>
+          <a class="btn" href="#" id="resumeLink">Download CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <section id="about" class="card section">
+          <h2>Tentang Saya</h2>
+          <p>Saya adalah professional di bidang jaringan dan infrastruktur TI dengan pengalaman proyek pengelolaan jaringan fiber, CCTV, dan sistem monitoring. Saya fokus membangun sistem yang andal, aman, dan mudah dioperasikan.</p>
+
+          <h2 style="margin-top:14px">Keahlian</h2>
+          <ul class="skills">
+            <li>Fiber Optik</li>
+            <li>Network Design</li>
+            <li>Routing & Switching</li>
+            <li>Monitoring (Zabbix/Prometheus)</li>
+            <li>Automasi (Ansible, Bash)</li>
+          </ul>
+        </section>
+
+        <section id="work" class="card section">
+          <h2>Portofolio Pilihan</h2>
+          <div class="projects">
+            <article class="project">
+              <h3>Implementasi Jaringan Fiber Optik Ruas Tol</h3>
+              <p class="muted">Deskripsi singkat: Mendesain dan mengawasi instalasi FO sepanjang 120 km, integrasi camera monitoring, dan sistem failover.</p>
+            </article>
+
+            <article class="project">
+              <h3>Sistem Monitoring Terpusat</h3>
+              <p class="muted">Deskripsi singkat: Deployment Zabbix untuk pemantauan server, perangkat jaringan, serta dashboard untuk tim operasional.</p>
+            </article>
+
+            <article class="project">
+              <h3>Automasi Deploy Konfigurasi Router</h3>
+              <p class="muted">Deskripsi singkat: Menyusun playbook Ansible untuk provisioning perangkat jaringan dan rollback otomatis.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="blog" class="card section">
+          <h2>Artikel & Dokumentasi</h2>
+          <p class="muted">(Contoh) "Panduan singkat desain jaringan FTTH untuk kantor cabang" — tersedia jika ingin ditambahkan ke situs.</p>
+        </section>
+      </div>
+
+      <aside>
+        <section class="card section">
+          <h2>Kontak</h2>
+          <p class="muted">Email: <a href="mailto:email@domain.com" id="emailLink">email@domain.com</a></p>
+          <p class="muted">Telepon: +62 812-3456-7890</p>
+
+          <h2 style="margin-top:12px">Sosial</h2>
+          <p class="muted">LinkedIn · GitHub · Twitter (tambahkan link Anda)</p>
+        </section>
+
+        <section class="card section">
+          <h2>Hubungi Saya</h2>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" rows="5" placeholder="Pesan" required></textarea>
+            <button type="submit" class="primary">Kirim Pesan</button>
+          </form>
+          <p class="muted" style="font-size:0.85rem;margin-top:8px">Form ini akan membuka aplikasi email Anda untuk mengirimkan pesan.</p>
+        </section>
+
+        <section class="card section">
+          <h2>Quick Links</h2>
+          <p class="muted">Instruksi: Ganti teks, tambahkan gambar, dan upload CV Anda ke folder yang sama lalu ubah link "Download CV".</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Rony Susanto — Semua hak cipta dilindungi.
+    </footer>
+  </main>
+
+  <script>
+    // --- Konfigurasi awal (ubah sesuai kebutuhan) ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('resumeLink').href = 'resume.pdf'; // letakkan file resume.pdf di folder yang sama
+    document.getElementById('emailLink').href = 'mailto:email@domain.com';
+
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    }
+
+    function handleSubmit(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var msg = document.getElementById('message').value.trim();
+      if(!name||!email||!msg){alert('Lengkapi semua kolom.');return}
+      var subject = encodeURIComponent('Pesan dari situs: '+name);
+      var body = encodeURIComponent('Nama: '+name+'\nEmail: '+email+'\n\n'+msg);
+      window.location.href = 'mailto:email@domain.com?subject='+subject+'&body='+body;
+    }
+
+    // Anda bisa menambahkan Google Analytics, netlify forms, atau integrasi lain di sini.
+  </script>
+
+  <!-- Petunjuk singkat hosting:
+       1. Simpan file ini sebagai index.html.
+       2. Letakkan resume.pdf (opsional) di folder yang sama.
+       3. Untuk hosting gratis: gunakan GitHub Pages atau Netlify. Commit file ke repo dan aktifkan Pages/Deploy.
+       4. Untuk mengganti foto avatar: ganti .avatar div dengan <img src="foto.jpg" alt="Rony" style="width:96px;height:96px;border-radius:12px;object-fit:cover"> dan upload foto.jpg.
+  -->
+</body>
+</html>
